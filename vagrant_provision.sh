@@ -67,6 +67,23 @@ nodejs
 # Install imagemagick
 apt-get install -y imagemagick
 
+# link vagrant dir into home
+su - ubuntu -c 'ln -s /vagrant /home/ubuntu/'
+
+# install guile ai
+apt-get install -y \
+ python \
+ python-pip \
+ python-dev
+
+pip install --upgrade pip
+pip install tensorflow
+pip install --upgrade psutil
+
+wget -q https://github.com/guildai/guild/releases/download/v0.1.0-alpha.2/guild_0.1.0-alpha.2_linux_x86_64.tar.gz -O - | tar -C /opt/ -xz
+
+ln -sf /opt/guild_0.1.0-alpha.2_linux_x86_64/bin/guild /usr/local/bin/guild
+
 # If seeds.exs exists we assume it is a Phoenix project
 if [ -f /vagrant/priv/repo/seeds.exs ]
   then
