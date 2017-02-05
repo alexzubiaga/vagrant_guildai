@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 VAGRANTFILE_API_VERSION = "2"
 
-VM_NAME = "my_elixir_vm"
+VM_NAME = "guild_demo"
 MEMORY_SIZE_MB = 1024
 NUMBER_OF_CPUS = 2
 
